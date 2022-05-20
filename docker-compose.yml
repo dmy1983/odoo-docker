@@ -9,7 +9,7 @@ services:
     volumes:
       - postgresql-data:/var/lib/postgresql/data
   odoo:
-    image: odoo:15
+    image: odoo:14
     platform: linux/amd64
     container_name: odoo14
     tty: true
