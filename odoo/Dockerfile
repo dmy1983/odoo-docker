@@ -41,8 +41,12 @@ RUN pip3 install  fpdf>=1.7.2
 RUN pip3 install  dbf>=0.88.019
 RUN pip3 install  Pillow>=2.0.0
 
+RUN apt-get install -y swig libssl-dev
+RUN apt-get install python3-dev 
 
-RUN git clone https://github.com/pyar/pyafipws.git -b py3k && cd pyafipws && pip3 install -r requirements.txt . && python setyp.py install &&cd .. && rm -rf pyafipws
+RUN apt-get install -y python-httplib2 python-m2crypto
+
+RUN git clone https://github.com/pyar/pyafipws.git -b py3k && cd pyafipws && pip3 install -r requirements.txt && cd .. && rm -rf pyafipws
 
 
 RUN pip3 install  git+https://github.com/OCA/openupgradelib/@master
